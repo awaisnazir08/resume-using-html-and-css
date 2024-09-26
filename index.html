@@ -122,6 +122,29 @@
             gap: 5rem;
         }
 
+        .group-3{
+            /* max-width: 700px; */
+            width: 100%;
+            margin: 0 auto;
+            grid-column: 1/-1;
+            display: flex;
+            flex-direction: row;
+            gap: 5rem;
+        }
+
+        .group-3 > div{
+            flex: 1;
+        }
+
+        @media only screen and (max-width: 768px){
+            .profile{
+                margin-bottom: 0;
+            }
+            .group-3{
+                flex-direction: column;
+            }
+        }
+
         .profile {
             grid-column: 1 / -1;
             margin-bottom: 2rem;
@@ -219,6 +242,46 @@
             width:2rem;
         }
 
+        /* socials */
+        .social_items{
+            margin-top: 2rem;
+        }
+
+        .social_item{
+            margin-top: 1.5rem;
+            font-size: 1.5rem;
+            display: flex;
+            gap: .5rem;
+            align-items: center;
+            justify-content: flex-start;
+            color: var(--text-color);
+            
+        }
+
+        .social_item:hover{
+            color: var(--primary-color);
+        }
+
+        .social_item svg{
+            width: 2rem;
+        }
+
+        hr{
+            grid-column: 1/-1;
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 5rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-top: 2px solid rgba(128, 128, 128, 0.232);
+        }
+
+        @media only screen and (max-width: 768px){
+            hr{
+                margin: 0 auto;
+            }
+        }
+
     </style>
 </head>
 
@@ -243,7 +306,7 @@
                         inference in computer vision, exploring the integration of
                         causality to improve the effectiveness of AI models.
                     </p>
-                    <a class="downloadButton" href="./cv.pdf" download="Resume.pdf">Download my CV</a>
+                    <a class="downloadButton" href="./awais_nazir_cv.pdf" download="Awais_Nazir_resume.pdf">Download my CV</a>
                 </div>
             </div>
         </div>
@@ -406,6 +469,7 @@
                 </div>
             </div>
         </div>
+        <hr>
         <div class="group-3">
             <div class="contact">
                 <h3 class="title">Contact</h3>
@@ -424,11 +488,11 @@
             <div class="socials">
                 <h3 class="title">Socials</h3>
                 <div class="social_items">
-                    <a href="https://github.com/awaisnazir08" target="_blank">
+                    <a class="social_item" href="https://github.com/awaisnazir08" target="_blank">
                         <i data-feather="github"></i>
                         <span>/awaisnazir08</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/awais-nazir-92b08316b">
+                    <a class="social_item" href="https://www.linkedin.com/in/awais-nazir-92b08316b">
                         <i data-feather="linkedin"></i>
                         <span>Awais Nazir</span>
                     </a>
