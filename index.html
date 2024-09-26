@@ -1,81 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
-        *{
+
+        * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
         }
 
-        #my_image{
+        #my_image {
             border-radius: 50%;
         }
 
-        :root{
+        :root {
             --primary-color: #ff7613;
-            --text-color:#727171;
-        } 
+            --text-color: #727171;
+        }
 
-        html{
+        html {
             font-size: 10px;
         }
 
-        body{
+        body {
             font-family: Inter, sans-serif;
             background-color: black;
-            color:white;
+            color: white;
         }
 
         /* common styles */
-        img{
+        img {
             width: 100%;
         }
 
-        .description{
+        .description {
             margin-top: 1rem;
             font-size: 1.5rem;
             font-weight: 400;
             color: var(--text-color)
         }
 
-        .title{
+        .title {
             color: var(--primary-color);
             font-weight: 700;
             font-size: 2rem;
             text-transform: uppercase;
         }
 
-        a{
+        a {
             text-decoration: none;
-            color:white;
+            color: white;
         }
 
-        .downloadButton{
+        .downloadButton {
             display: block;
             text-decoration: underline;
             font-size: 1.6rem;
             margin-top: 1rem;
         }
 
-        .downloadButton:hover{
+        .downloadButton:hover {
             color: var(--primary-color);
         }
 
-        @media only screen and (max-width: 768px){
-            .profile_container{
+        @media only screen and (max-width: 768px) {
+            .profile_container {
                 flex-direction: column;
             }
         }
 
         /* layouts */
-        .container{
+        .container {
             max-width: 1000px;
-            width:90%;
+            width: 90%;
             margin: 0 auto;
             display: grid;
             padding: 5rem;
@@ -83,10 +85,10 @@
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
         }
-        
-        @media only screen and (max-width:  768px) {
-            .container{
-                width:100%;
+
+        @media only screen and (max-width: 768px) {
+            .container {
+                width: 100%;
                 grid-template-columns: 1fr;
                 padding: 3rem;
                 gap: 7rem;
@@ -94,39 +96,46 @@
             }
         }
 
-        .profile{
+        .group-1 {
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+
+        }
+
+        .profile {
             grid-column: 1 / -1;
             margin-bottom: 2rem;
         }
 
         /* profile */
-        .profile_container{
+        .profile_container {
             display: flex;
             gap: 2rem;
         }
 
-        .profile_profileImg{
-            max-width:250px;
+        .profile_profileImg {
+            max-width: 250px;
         }
 
-        .profile_name_firstName{
-            color:white;
+        .profile_name_firstName {
+            color: white;
             font-weight: 200;
-            font-size: clamp(2rem,8vw, 4rem);
+            font-size: clamp(2rem, 8vw, 4rem);
             text-transform: uppercase;
-            display:block;
+            display: block;
             margin-bottom: -0.8rem;
         }
 
-        .profile_name_lastName{
-            color:var(--primary-color);
+        .profile_name_lastName {
+            color: var(--primary-color);
             font-weight: 700;
             font-size: clamp(2.5rem, 15vw, 7rem);
             text-transform: uppercase;
-            display:block;
+            display: block;
         }
 
-        .profile_title{
+        .profile_title {
             font-size: 1.5rem;
             font-weight: 100;
             text-transform: uppercase;
@@ -134,24 +143,24 @@
         }
 
         /* Expertise */
-        .skill_list{
+        .skill_list {
             margin-top: 1rem;
             margin-left: 2rem;
             line-height: 2;
         }
 
         /* Reference */
-        .ref_item{
-            margin: 2rem;
+        .ref_item {
+            margin-top: 2rem;
         }
 
-        .ref_name{
+        .ref_name {
             font-size: 1.6rem;
-            font-weight: 700;   
+            font-weight: 700;
         }
-
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="profile">
@@ -166,9 +175,12 @@
                     </h1>
                     <p class="profile_title">Software Developer</p>
                     <p class="description">
-                        I am a 5th-semester Software Engineering student at NUST with a deep passion for artificial intelligence. My academic
-                        journey is focused on expanding my expertise in computer vision, and generative AI. Currently, I am engaged in research
-                        on causal inference in computer vision, exploring the integration of causality to improve the effectiveness of AI models.
+                        I am a 5th-semester Software Engineering student at NUST with a deep passion for artificial
+                        intelligence. My academic
+                        journey is focused on expanding my expertise in computer vision, and generative AI. Currently, I
+                        am engaged in research
+                        on causal inference in computer vision, exploring the integration of causality to improve the
+                        effectiveness of AI models.
                     </p>
                     <a class="downloadButton" href="./cv.pdf" download="Resume.pdf">Download my CV</a>
                 </div>
@@ -195,24 +207,53 @@
                 <div class="ref_item">
                     <h4 class="ref_name">Hello</h4>
                     <p class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eos fuga expedita repellendus unde velit aut est, consequuntur alias nemo dolores laudantium illo quae itaque aspernatur necessitatibus? At, aliquam iste.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eos fuga expedita repellendus
+                        unde velit aut est, consequuntur alias nemo dolores laudantium illo quae itaque aspernatur
+                        necessitatibus? At, aliquam iste.
                     </p>
                 </div>
-                <div class="ref_item"></div>
-                    <h4 class="ref_name"></h4>
+                <div class="ref_item">
+                    <h4 class="ref_name">d</h4>
                     <p class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eos fuga expedita repellendus unde velit aut est, consequuntur alias nemo dolores laudantium illo quae itaque aspernatur necessitatibus? At, aliquam iste.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eos fuga expedita repellendus
+                        unde velit aut est, consequuntur alias nemo dolores laudantium illo quae itaque aspernatur
+                        necessitatibus? At, aliquam iste.
                     </p>
                 </div>
+            </div>
 
+            <div class="education">
+                <h3 class="title">Education</h3>
+                <div class="education_item">
+                    <p class="item_preTitle">2018-2019</p>
+                    <h4 class="item_title">10th grade</h4>
+                    <div class="item_subtitle">
+                        Wittenberg Birnamwood High School
+                    </div>
+                </div>
+                <div class="education_item">
+                    <p class="item_preTitle">2018-2019</p>
+                    <h4 class="item_title">10th grade</h4>
+                    <div class="item_subtitle">
+                        Wittenberg Birnamwood High School
+                    </div>
+                </div>
+                <div class="education_item">
+                    <p class="item_preTitle">2018-2019</p>
+                    <h4 class="item_title">10th grade</h4>
+                    <div class="item_subtitle">
+                        Wittenberg Birnamwood High School
+                    </div>
+                </div>
             </div>
         </div>
         <div class="group-2">
-            
+
         </div>
         <div class="group-3">
-            
+
         </div>
     </div>
 </body>
+
 </html>
