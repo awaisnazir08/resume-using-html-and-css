@@ -35,13 +35,120 @@
         img{
             width: 100%;
         }
-        
+
+        .description{
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--text-color)
+        }
+
+        .title{
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
         a{
             text-decoration: none;
             color:white;
         }
 
+        .downloadButton{
+            display: block;
+            text-decoration: underline;
+            font-size: 1.6rem;
+            margin-top: 1rem;
+        }
+
+        .downloadButton:hover{
+            color: var(--primary-color);
+        }
+
+        @media only screen and (max-width: 768px){
+            .profile_container{
+                flex-direction: column;
+            }
+        }
+
         /* layouts */
+        .container{
+            max-width: 1000px;
+            width:90%;
+            margin: 0 auto;
+            display: grid;
+            padding: 5rem;
+            background-color: #070707;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        @media only screen and (max-width:  768px) {
+            .container{
+                width:100%;
+                grid-template-columns: 1fr;
+                padding: 3rem;
+                gap: 7rem;
+
+            }
+        }
+
+        .profile{
+            grid-column: 1 / -1;
+            margin-bottom: 2rem;
+        }
+
+        /* profile */
+        .profile_container{
+            display: flex;
+            gap: 2rem;
+        }
+
+        .profile_profileImg{
+            max-width:250px;
+        }
+
+        .profile_name_firstName{
+            color:white;
+            font-weight: 200;
+            font-size: clamp(2rem,8vw, 4rem);
+            text-transform: uppercase;
+            display:block;
+            margin-bottom: -0.8rem;
+        }
+
+        .profile_name_lastName{
+            color:var(--primary-color);
+            font-weight: 700;
+            font-size: clamp(2.5rem, 15vw, 7rem);
+            text-transform: uppercase;
+            display:block;
+        }
+
+        .profile_title{
+            font-size: 1.5rem;
+            font-weight: 100;
+            text-transform: uppercase;
+
+        }
+
+        /* Expertise */
+        .skill_list{
+            margin-top: 1rem;
+            margin-left: 2rem;
+            line-height: 2;
+        }
+
+        /* Reference */
+        .ref_item{
+            margin: 2rem;
+        }
+
+        .ref_name{
+            font-size: 1.6rem;
+            font-weight: 700;   
+        }
 
     </style>
 </head>
@@ -54,17 +161,57 @@
                 </div>
                 <div>
                     <h1 class="profile_name">
-                        Awais Nazir
+                        <span class="profile_name_firstName">Awais </span>
+                        <span class="profile_name_lastName">Nazir</span>
                     </h1>
                     <p class="profile_title">Software Developer</p>
-                    <p class="profile_description">
+                    <p class="description">
                         I am a 5th-semester Software Engineering student at NUST with a deep passion for artificial intelligence. My academic
- journey is focused on expanding my expertise in computer vision, and generative AI. Currently, I am engaged in research
- on causal inference in computer vision, exploring the integration of causality to improve the effectiveness of AI models.
+                        journey is focused on expanding my expertise in computer vision, and generative AI. Currently, I am engaged in research
+                        on causal inference in computer vision, exploring the integration of causality to improve the effectiveness of AI models.
                     </p>
                     <a class="downloadButton" href="./cv.pdf" download="Resume.pdf">Download my CV</a>
                 </div>
             </div>
+        </div>
+        <div class="group-1">
+            <div class="skills">
+                <h3 class="title">
+                    Expertise
+                </h3>
+                <ul class="skill_list description">
+                    <li>Python</li>
+                    <li>OpenCV</li>
+                    <li>Pytorch</li>
+                    <li>Docker</li>
+                    <li>Tensorflow</li>
+                    <li>Vector Databases</li>
+                    <li>Nextjs</li>
+
+                </ul>
+            </div>
+            <div class="reference">
+                <h3 class="title">Reference</h3>
+                <div class="ref_item">
+                    <h4 class="ref_name">Hello</h4>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eos fuga expedita repellendus unde velit aut est, consequuntur alias nemo dolores laudantium illo quae itaque aspernatur necessitatibus? At, aliquam iste.
+                    </p>
+                </div>
+                <div class="ref_item"></div>
+                    <h4 class="ref_name"></h4>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eos fuga expedita repellendus unde velit aut est, consequuntur alias nemo dolores laudantium illo quae itaque aspernatur necessitatibus? At, aliquam iste.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="group-2">
+            
+        </div>
+        <div class="group-3">
+            
         </div>
     </div>
 </body>
