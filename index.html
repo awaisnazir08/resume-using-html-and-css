@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #my_image{
+            border-radius: 50%;
+        }
+
+        :root{
+            --primary-color: #ff7613;
+            --text-color:#727171;
+        } 
+
+        html{
+            font-size: 10px;
+        }
+
+        body{
+            font-family: Inter, sans-serif;
+            background-color: black;
+            color:white;
+        }
+
+        /* common styles */
+        img{
+            width: 100%;
+        }
+        
+        a{
+            text-decoration: none;
+            color:white;
+        }
+
+        /* layouts */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <div class="profile_container">
+                <div class="profile_profileImg">
+                    <img id='my_image' src="./images/image.jpg" alt="Awais Nazir">
+                </div>
+                <div>
+                    <h1 class="profile_name">
+                        Awais Nazir
+                    </h1>
+                    <p class="profile_title">Software Developer</p>
+                    <p class="profile_description">
+                        I am a 5th-semester Software Engineering student at NUST with a deep passion for artificial intelligence. My academic
+ journey is focused on expanding my expertise in computer vision, and generative AI. Currently, I am engaged in research
+ on causal inference in computer vision, exploring the integration of causality to improve the effectiveness of AI models.
+                    </p>
+                    <a class="downloadButton" href="./cv.pdf" download="Resume.pdf">Download my CV</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
