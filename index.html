@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume</title>
+    <script src="https://unpkg.com/feather-icons"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap");
 
         * {
             padding: 0;
@@ -42,7 +43,7 @@
             margin-top: 1rem;
             font-size: 1.5rem;
             font-weight: 400;
-            color: var(--text-color)
+            color: var(--text-color);
         }
 
         .title {
@@ -58,7 +59,7 @@
         }
 
         .downloadButton {
-            display: block;
+            display: inline-block;
             text-decoration: underline;
             font-size: 1.6rem;
             margin-top: 1rem;
@@ -111,11 +112,11 @@
                 grid-template-columns: 1fr;
                 padding: 3rem;
                 gap: 7rem;
-
             }
         }
 
-        .group-1, .group-2{
+        .group-1,
+        .group-2 {
             display: flex;
             flex-direction: column;
             gap: 5rem;
@@ -157,7 +158,6 @@
             font-size: 1.5rem;
             font-weight: 100;
             text-transform: uppercase;
-
         }
 
         /* Expertise */
@@ -193,9 +193,32 @@
         }
 
         /* achievments */
-        .achievements_item{
+        .achievements_item {
             margin-top: 2rem;
         }
+
+        /* interests */
+        .interests_items {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .interests_item{
+            font-size: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: .5rem;
+            color: var(--text-color);
+        }
+
+        .interests_item svg{
+            width:2rem;
+        }
+
     </style>
 </head>
 
@@ -204,7 +227,7 @@
         <div class="profile">
             <div class="profile_container">
                 <div class="profile_profileImg">
-                    <img id='my_image' src="./images/profile_pic.jpeg" alt="Awais Nazir">
+                    <img id="my_image" src="./images/profile_pic.jpeg" alt="Awais Nazir" />
                 </div>
                 <div>
                     <h1 class="profile_name">
@@ -213,12 +236,12 @@
                     </h1>
                     <p class="profile_title">Software Developer</p>
                     <p class="description">
-                        I am a 5th-semester Software Engineering student at NUST with a deep passion for artificial
-                        intelligence. My academic
-                        journey is focused on expanding my expertise in computer vision, and generative AI. Currently, I
-                        am engaged in research
-                        on causal inference in computer vision, exploring the integration of causality to improve the
-                        effectiveness of AI models.
+                        I am a 5th-semester Software Engineering student at NUST with a
+                        deep passion for artificial intelligence. My academic journey is
+                        focused on expanding my expertise in computer vision, and
+                        generative AI. Currently, I am engaged in research on causal
+                        inference in computer vision, exploring the integration of
+                        causality to improve the effectiveness of AI models.
                     </p>
                     <a class="downloadButton" href="./cv.pdf" download="Resume.pdf">Download my CV</a>
                 </div>
@@ -226,9 +249,7 @@
         </div>
         <div class="group-1">
             <div class="skills">
-                <h3 class="title">
-                    Expertise
-                </h3>
+                <h3 class="title">Expertise</h3>
                 <ul class="skill_list description">
                     <li>Python</li>
                     <li>OpenCV</li>
@@ -237,7 +258,6 @@
                     <li>Tensorflow</li>
                     <li>Vector Databases</li>
                     <li>Nextjs</li>
-
                 </ul>
             </div>
             <!-- <div class="reference">
@@ -265,16 +285,12 @@
                 <div class="education_item">
                     <p class="item_preTitle">2018 - 2019</p>
                     <h4 class="item_title">10th grade</h4>
-                    <div class="item_subtitle">
-                        Wittenberg Birnamwood High School
-                    </div>
+                    <div class="item_subtitle">Wittenberg Birnamwood High School</div>
                 </div>
                 <div class="education_item">
                     <p class="item_preTitle">2020 - 2022</p>
                     <h4 class="item_title">FSC Pre-Engineering</h4>
-                    <div class="item_subtitle">
-                        F.G. Sir Syed College
-                    </div>
+                    <div class="item_subtitle">F.G. Sir Syed College</div>
                 </div>
                 <div class="education_item">
                     <p class="item_preTitle">2022 - 2026</p>
@@ -291,14 +307,20 @@
                     <p class="item_preTitle">2023</p>
                     <h4 class="item_title">Machine Learning Specialization</h4>
                     <p class="description">
-                        Completed a Machine Learning Specialization by deeplearning.ai, gaining in-depth knowledge of machine learning algorithms, model evaluation, and optimization techniques. The course provided hands-on experience in building and deploying predictive models.
+                        Completed a Machine Learning Specialization by deeplearning.ai,
+                        gaining in-depth knowledge of machine learning algorithms, model
+                        evaluation, and optimization techniques. The course provided
+                        hands-on experience in building and deploying predictive models.
                     </p>
                 </div>
                 <div class="certification_item">
                     <p class="item_preTitle">2023</p>
                     <h4 class="item_title">GANs Specialization</h4>
                     <p class="description">
-                        Completed a GANs Specialization by deeplearning.ai, focusing on Generative Adversarial Networks. The course covered the theory and practical application of GANs, providing hands-on experience in generating images and improving model performance.
+                        Completed a GANs Specialization by deeplearning.ai, focusing on
+                        Generative Adversarial Networks. The course covered the theory and
+                        practical application of GANs, providing hands-on experience in
+                        generating images and improving model performance.
                     </p>
                 </div>
             </div>
@@ -307,23 +329,29 @@
             <div class="experience">
                 <h3 class="title">Experience</h3>
                 <div class="experience_item">
-                    <p class="item_preTitle">
-                        2024
-                    </p>
+                    <p class="item_preTitle">2024</p>
                     <h4 class="item_title">Machine Learning Research Intern</h4>
                     <p class="item_subtitle">Made IT</p>
                     <p class="description">
-                        As a Machine Learning Research Intern at Made IT, I worked on applied machine learning projects, including visual recognition and shoplifting detection. I gained hands-on experience in model development and optimization, contributing to real-world AI solutions.
+                        As a Machine Learning Research Intern at Made IT, I worked on
+                        applied machine learning projects, including visual recognition
+                        and shoplifting detection. I gained hands-on experience in model
+                        development and optimization, contributing to real-world AI
+                        solutions.
                     </p>
                 </div>
                 <div class="experience_item">
-                    <p class="item_preTitle">
-                        2024
-                    </p>
+                    <p class="item_preTitle">2024</p>
                     <h4 class="item_title">Deep Learning intern</h4>
-                    <p class="item_subtitle">Deep Learning Research Lab (DLL-NCAI) NUST</p>
+                    <p class="item_subtitle">
+                        Deep Learning Research Lab (DLL-NCAI) NUST
+                    </p>
                     <p class="description">
-                        As a Deep Learning Intern at the Deep Learning Research Lab (DLL-NCAI) NUST, I worked on cutting-edge AI projects, focusing on computer vision and neural networks. I contributed to research and development, enhancing my skills in deep learning and model optimization.
+                        As a Deep Learning Intern at the Deep Learning Research Lab
+                        (DLL-NCAI) NUST, I worked on cutting-edge AI projects, focusing on
+                        computer vision and neural networks. I contributed to research and
+                        development, enhancing my skills in deep learning and model
+                        optimization.
                     </p>
                 </div>
             </div>
@@ -331,34 +359,60 @@
             <div class="achievements">
                 <h3 class="title">achievements</h3>
                 <div class="achievements_item">
-                    <p class="item_preTitle">
-                        2018 - 2019
-                    </p>
+                    <p class="item_preTitle">2018 - 2019</p>
                     <h4 class="item_title">Youth Ambassador of Pakistan</h4>
-                    <p class="item_subtitle">Youth Exchange and Study Program (YES) Scholarship winner</p>
+                    <p class="item_subtitle">
+                        Youth Exchange and Study Program (YES) Scholarship winner
+                    </p>
                     <p class="description">
-                        As a Youth Ambassador of Pakistan under the Youth Exchange and Study (YES) Program, I represented Pakistan in the United States, engaging in cross-cultural exchange and building diplomatic relations. Through this prestigious scholarship, I developed leadership skills, promoted cultural understanding, and acted as a bridge between the two countries by sharing insights from my home country.
+                        As a Youth Ambassador of Pakistan under the Youth Exchange and
+                        Study (YES) Program, I represented Pakistan in the United States,
+                        engaging in cross-cultural exchange and building diplomatic
+                        relations. Through this prestigious scholarship, I developed
+                        leadership skills, promoted cultural understanding, and acted as a
+                        bridge between the two countries by sharing insights from my home
+                        country.
                     </p>
                 </div>
                 <div class="achievements_item">
-                    <p class="item_preTitle">
-                        2023 - Present
-                    </p>
+                    <p class="item_preTitle">2023 - Present</p>
                     <h4 class="item_title">GDSC NUST AI Team Member</h4>
-                    <p class="item_subtitle">Google Developer Student Clubs (GDSC) NUST</p>
+                    <p class="item_subtitle">
+                        Google Developer Student Clubs (GDSC) NUST
+                    </p>
                     <p class="description">
-                        As a GDSC NUST AI Team Member, I collaborated with a team of developers to work on innovative AI projects and contribute to the growth of the developer community at NUST. My role involved researching AI technologies, building machine learning models, and sharing knowledge through workshops and events to inspire and educate fellow students.
+                        As a GDSC NUST AI Team Member, I collaborated with a team of
+                        developers to work on innovative AI projects and contribute to the
+                        growth of the developer community at NUST. My role involved
+                        researching AI technologies, building machine learning models, and
+                        sharing knowledge through workshops and events to inspire and
+                        educate fellow students.
                     </p>
                 </div>
             </div>
-            <div class="interest">
-                <div class="h3"></div>
+            <div class="interests">
+                <h3 class="title">Interest</h3>
+                <div class="interests_items">
+                    <div class="interests_item">
+                        <i data-feather="code"></i>
+                        <span>Programming</span>
+                    </div>
+                    <div class="interests_item">
+                        <i data-feather="map"></i>
+                        <span>Travel</span>
+                    </div>
+                    <div class="interests_item">
+                        <i data-feather="cpu"></i>
+                        <span>Artificial intelligence</span>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="group-3">
-
-        </div>
+        <div class="group-3"></div>
     </div>
+    <script>
+        feather.replace();
+    </script>
 </body>
 
 </html>
