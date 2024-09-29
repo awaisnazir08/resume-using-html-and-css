@@ -1,512 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resume</title>
-    <script src="https://unpkg.com/feather-icons"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Viewer</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap");
-
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        #my_image {
-            border-radius: 50%;
-        }
-
-        :root {
-            --primary-color: #ff7613;
-            --text-color: #727171;
-        }
-
-        html {
-            font-size: 10px;
-        }
-
         body {
-            font-family: Inter, sans-serif;
-            background-color: black;
-            color: white;
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
         }
-
-        /* common styles */
-        img {
+        .left-panel {
+            width: 30%;
+            background-color: #f0f0f0;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .left-panel img {
             width: 100%;
+            cursor: pointer;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
         }
-
-        .description {
-            margin-top: 1rem;
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: var(--text-color);
+        .right-panel {
+            width: 70%;
+            padding: 20px;
+            overflow: auto;
         }
-
-        .title {
-            color: var(--primary-color);
-            font-weight: 700;
-            font-size: 2rem;
-            text-transform: uppercase;
-        }
-
-        a {
-            text-decoration: none;
-            color: white;
-        }
-
-        .downloadButton {
-            display: inline-block;
-            text-decoration: underline;
-            font-size: 1.6rem;
-            margin-top: 1rem;
-        }
-
-        .downloadButton:hover {
-            color: var(--primary-color);
-        }
-
-        @media only screen and (max-width: 768px) {
-            .profile_container {
-                flex-direction: column;
-            }
-        }
-
-        .item_preTitle {
-            font-size: 1.4rem;
-            color: var(--text-color);
-            font-weight: 300;
-        }
-
-        .item_title {
-            font-size: 1.6rem;
-            color: white;
-            font-weight: 500;
-            margin: 0.8rem 0;
-        }
-
-        .item_subtitle {
-            font-size: 1.4rem;
-            color: var(--text-color);
-            font-weight: 400;
-        }
-
-        /* layouts */
-        .container {
-            max-width: 1000px;
-            width: 90%;
-            margin: 0 auto;
-            display: grid;
-            padding: 5rem;
-            background-color: #070707;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        @media only screen and (max-width: 768px) {
-            .container {
-                width: 100%;
-                grid-template-columns: 1fr;
-                padding: 3rem;
-                gap: 7rem;
-            }
-        }
-
-        .group-1,
-        .group-2 {
-            display: flex;
-            flex-direction: column;
-            gap: 5rem;
-        }
-
-        .group-3{
-            /* max-width: 700px; */
+        iframe {
             width: 100%;
-            margin: 0 auto;
-            grid-column: 1/-1;
-            display: flex;
-            flex-direction: row;
-            gap: 5rem;
-        }
-
-        .group-3 > div{
-            flex: 1;
-        }
-
-        @media only screen and (max-width: 768px){
-            .profile{
-                margin-bottom: 0;
-            }
-            .group-3{
-                flex-direction: column;
-            }
-        }
-
-        .profile {
-            grid-column: 1 / -1;
-            margin-bottom: 2rem;
-        }
-
-        /* profile */
-        .profile_container {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .profile_profileImg {
-            max-width: 250px;
-        }
-
-        .profile_name_firstName {
-            color: white;
-            font-weight: 200;
-            font-size: clamp(2rem, 8vw, 4rem);
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: -0.8rem;
-        }
-
-        .profile_name_lastName {
-            color: var(--primary-color);
-            font-weight: 700;
-            font-size: clamp(2.5rem, 15vw, 7rem);
-            text-transform: uppercase;
-            display: block;
-        }
-
-        .profile_title {
-            font-size: 1.5rem;
-            font-weight: 100;
-            text-transform: uppercase;
-        }
-
-        /* Expertise */
-        .skill_list {
-            margin-top: 1rem;
-            margin-left: 2rem;
-            line-height: 2;
-        }
-
-        /* Reference */
-        .ref_item {
-            margin-top: 2rem;
-        }
-
-        .ref_name {
-            font-size: 1.6rem;
-            font-weight: 700;
-        }
-
-        /* education */
-        .education_item {
-            margin-top: 2rem;
-        }
-
-        /* certification */
-        .certification_item {
-            margin-top: 2rem;
-        }
-
-        /* experience */
-        .experience_item {
-            margin-top: 2rem;
-        }
-
-        /* achievments */
-        .achievements_item {
-            margin-top: 2rem;
-        }
-
-        /* interests */
-        .interests_items {
-            margin-top: 2rem;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-        .interests_item{
-            font-size: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: .5rem;
-            color: var(--text-color);
-        }
-
-        .interests_item svg{
-            width:2rem;
-        }
-
-        /* socials */
-        .social_items{
-            margin-top: 2rem;
-        }
-
-        .social_item{
-            margin-top: 1.5rem;
-            font-size: 1.5rem;
-            display: flex;
-            gap: .5rem;
-            align-items: center;
-            justify-content: flex-start;
-            color: var(--text-color);
-            
-        }
-
-        .social_item:hover{
-            color: var(--primary-color);
-        }
-
-        .social_item svg{
-            width: 2rem;
-        }
-
-        hr{
-            grid-column: 1/-1;
-            width: 80%;
-            margin: 0 auto;
-            margin-top: 5rem;
-            margin-bottom: 1rem;
+            height: 100vh;
             border: none;
-            border-top: 2px solid rgba(128, 128, 128, 0.232);
         }
-
-        @media only screen and (max-width: 768px){
-            hr{
-                margin: 0 auto;
-            }
-        }
-
     </style>
 </head>
-
 <body>
-    <div class="container">
-        <div class="profile">
-            <div class="profile_container">
-                <div class="profile_profileImg">
-                    <img id="my_image" src="./images/profile_pic.jpeg" alt="Awais Nazir" />
-                </div>
-                <div>
-                    <h1 class="profile_name">
-                        <span class="profile_name_firstName">Awais </span>
-                        <span class="profile_name_lastName">Nazir</span>
-                    </h1>
-                    <p class="profile_title">Software Developer</p>
-                    <p class="description">
-                        I am a 5th-semester Software Engineering student at NUST with a
-                        deep passion for artificial intelligence. My academic journey is
-                        focused on expanding my expertise in computer vision, and
-                        generative AI. Currently, I am engaged in research on causal
-                        inference in computer vision, exploring the integration of
-                        causality to improve the effectiveness of AI models.
-                    </p>
-                    <a class="downloadButton" href="./awais_nazir_cv.pdf" download="Awais_Nazir_resume.pdf">Download my CV</a>
-                </div>
-            </div>
-        </div>
-        <div class="group-1">
-            <div class="skills">
-                <h3 class="title">Expertise</h3>
-                <ul class="skill_list description">
-                    <li>Python</li>
-                    <li>OpenCV</li>
-                    <li>Pytorch</li>
-                    <li>Docker</li>
-                    <li>Tensorflow</li>
-                    <li>Vector Databases</li>
-                    <li>Nextjs</li>
-                </ul>
-            </div>
-            <!-- <div class="reference">
-                <h3 class="title">Reference</h3>
-                <div class="ref_item">
-                    <h4 class="ref_name">Hello</h4>
-                    <p class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eos fuga expedita repellendus
-                        unde velit aut est, consequuntur alias nemo dolores laudantium illo quae itaque aspernatur
-                        necessitatibus? At, aliquam iste.
-                    </p>
-                </div>
-                <div class="ref_item">
-                    <h4 class="ref_name">d</h4>
-                    <p class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eos fuga expedita repellendus
-                        unde velit aut est, consequuntur alias nemo dolores laudantium illo quae itaque aspernatur
-                        necessitatibus? At, aliquam iste.
-                    </p>
-                </div>
-            </div> -->
-
-            <div class="education">
-                <h3 class="title">Education</h3>
-                <div class="education_item">
-                    <p class="item_preTitle">2018 - 2019</p>
-                    <h4 class="item_title">10th grade</h4>
-                    <div class="item_subtitle">Wittenberg Birnamwood High School</div>
-                </div>
-                <div class="education_item">
-                    <p class="item_preTitle">2020 - 2022</p>
-                    <h4 class="item_title">FSC Pre-Engineering</h4>
-                    <div class="item_subtitle">F.G. Sir Syed College</div>
-                </div>
-                <div class="education_item">
-                    <p class="item_preTitle">2022 - 2026</p>
-                    <h4 class="item_title">Bachelors of Software Engineering</h4>
-                    <div class="item_subtitle">
-                        National University of Sciences and Technology (NUST)
-                    </div>
-                </div>
-            </div>
-
-            <div class="certification">
-                <h3 class="title">Certification</h3>
-                <div class="certification_item">
-                    <p class="item_preTitle">2023</p>
-                    <h4 class="item_title">Machine Learning Specialization</h4>
-                    <p class="description">
-                        Completed a Machine Learning Specialization by deeplearning.ai,
-                        gaining in-depth knowledge of machine learning algorithms, model
-                        evaluation, and optimization techniques. The course provided
-                        hands-on experience in building and deploying predictive models.
-                    </p>
-                </div>
-                <div class="certification_item">
-                    <p class="item_preTitle">2023</p>
-                    <h4 class="item_title">GANs Specialization</h4>
-                    <p class="description">
-                        Completed a GANs Specialization by deeplearning.ai, focusing on
-                        Generative Adversarial Networks. The course covered the theory and
-                        practical application of GANs, providing hands-on experience in
-                        generating images and improving model performance.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="group-2">
-            <div class="experience">
-                <h3 class="title">Experience</h3>
-                <div class="experience_item">
-                    <p class="item_preTitle">2024</p>
-                    <h4 class="item_title">Machine Learning Research Intern</h4>
-                    <p class="item_subtitle">Made IT</p>
-                    <p class="description">
-                        As a Machine Learning Research Intern at Made IT, I worked on
-                        applied machine learning projects, including visual recognition
-                        and shoplifting detection. I gained hands-on experience in model
-                        development and optimization, contributing to real-world AI
-                        solutions.
-                    </p>
-                </div>
-                <div class="experience_item">
-                    <p class="item_preTitle">2024</p>
-                    <h4 class="item_title">Deep Learning intern</h4>
-                    <p class="item_subtitle">
-                        Deep Learning Research Lab (DLL-NCAI) NUST
-                    </p>
-                    <p class="description">
-                        As a Deep Learning Intern at the Deep Learning Research Lab
-                        (DLL-NCAI) NUST, I worked on cutting-edge AI projects, focusing on
-                        computer vision and neural networks. I contributed to research and
-                        development, enhancing my skills in deep learning and model
-                        optimization.
-                    </p>
-                </div>
-            </div>
-
-            <div class="achievements">
-                <h3 class="title">achievements</h3>
-                <div class="achievements_item">
-                    <p class="item_preTitle">2018 - 2019</p>
-                    <h4 class="item_title">Youth Ambassador of Pakistan</h4>
-                    <p class="item_subtitle">
-                        Youth Exchange and Study Program (YES) Scholarship winner
-                    </p>
-                    <p class="description">
-                        As a Youth Ambassador of Pakistan under the Youth Exchange and
-                        Study (YES) Program, I represented Pakistan in the United States,
-                        engaging in cross-cultural exchange and building diplomatic
-                        relations. Through this prestigious scholarship, I acted as a
-                        bridge between the two countries by sharing insights from my home
-                        country.
-                    </p>
-                </div>
-                <div class="achievements_item">
-                    <p class="item_preTitle">2023 - Present</p>
-                    <h4 class="item_title">GDSC NUST AI Team Member</h4>
-                    <p class="item_subtitle">
-                        Google Developer Student Clubs (GDSC) NUST
-                    </p>
-                    <p class="description">
-                        As a GDSC NUST AI Team Member, I collaborated with a team of
-                        developers to work on innovative AI projects and contribute to the
-                        growth of the developer community at NUST. My role involved
-                        researching AI technologies, building machine learning models, and
-                        sharing knowledge through workshops.
-                    </p>
-                </div>
-            </div>
-            <div class="interests">
-                <h3 class="title">Interest</h3>
-                <div class="interests_items">
-                    <div class="interests_item">
-                        <i data-feather="code"></i>
-                        <span>Programming</span>
-                    </div>
-                    <div class="interests_item">
-                        <i data-feather="map"></i>
-                        <span>Travel</span>
-                    </div>
-                    <div class="interests_item">
-                        <i data-feather="cpu"></i>
-                        <span>Artificial intelligence</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="group-3">
-            <div class="contact">
-                <h3 class="title">Contact</h3>
-                <div class="contact_info">
-                    <p class="description">
-                        Islamabad, Pakistan.
-                    </p>
-                    <p class="description">
-                        +92 321 9834547
-                    </p>
-                    <p class="description">
-                        owaisnazir2228@gmail.com
-                    </p>
-                </div>
-            </div>
-            <div class="socials">
-                <h3 class="title">Socials</h3>
-                <div class="social_items">
-                    <a class="social_item" href="https://github.com/awaisnazir08" target="_blank">
-                        <i data-feather="github"></i>
-                        <span>/awaisnazir08</span>
-                    </a>
-                    <a class="social_item" href="https://www.linkedin.com/in/awais-nazir-92b08316b">
-                        <i data-feather="linkedin"></i>
-                        <span>Awais Nazir</span>
-                    </a>
-                    <!-- <a href="">
-                        <i data-feather="github"></i>
-                        <span>/awaisnazir08</span> -->
-                    </a>
-                </div>
-            </div>
-        </div>
+    <div class="left-panel">
+        <h2>Select a Resume</h2>
+        <!-- Hyperlinks that point to the resume pages -->
+        <a href="resume_1.html" target="viewer-frame">
+            <img src="images/resume1_screenshot.png" alt="Resume 1">
+        </a>
+        <a href="resume_2.html" target="viewer-frame">
+            <img src="images/resume2_screenshot.png" alt="Resume 2">
+        </a>
     </div>
-    <script>
-        feather.replace();
-    </script>
-</body>
 
+    <div class="right-panel">
+        <iframe name="viewer-frame" src="welcome.html"></iframe>
+    </div>
+</body>
 </html>
